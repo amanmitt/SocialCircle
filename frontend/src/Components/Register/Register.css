@@ -1,6 +1,7 @@
 .register {
   min-height: 100vh;
-  background-image: linear-gradient(to right, #fff5bc, #cec1ff);
+  /* background-image: linear-gradient(to right, #fff5bc, #cec1ff); */
+  background-image: linear-gradient(to right, #3a5aa4, #c6f2bc);
 
   display: flex;
   align-items: center;

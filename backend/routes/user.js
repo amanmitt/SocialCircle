@@ -10,6 +10,8 @@ const {
   getUserProfile,
   getAllUsers,
   logout,
+  getMyPosts,
+  getUserPosts,
 } = require("../controllers/user");
 const { isAuthenticated } = require("../middleware/auth");
 
@@ -28,7 +30,7 @@ router.route("/me").get(isAuthenticated, myProfile);
 router.route("/user/:id").get(isAuthenticated, getUserProfile);
 router.route("/users").get(isAuthenticated, getAllUsers);
 
-// router.route("/my/posts").get(isAuthenticated, getMyPosts);
-// router.route("/userposts/:id").get(isAuthenticated, getUserPosts);
+router.route("/my/posts").get(isAuthenticated, getMyPosts);
+router.route("/userposts/:id").get(isAuthenticated, getUserPosts);
 
 module.exports = router;
