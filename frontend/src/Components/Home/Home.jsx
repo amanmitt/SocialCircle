@@ -54,10 +54,10 @@ const Home = () => {
               key={post._id}
               postId={post._id}
               caption={post.caption}
-              // postImage={post.image.url}
+              postImage={post.image.url}
               likes={post.likes}
               comments={post.comments}
-              // ownerImage={post.owner.avatar.url}
+              ownerImage={post.owner.avatar.url}
               ownerName={post.owner.name}
               ownerId={post.owner._id}
             />
@@ -73,7 +73,7 @@ const Home = () => {
               key={user._id}
               userId={user._id}
               name={user.name}
-              // avatar={user.avatar.url}
+              avatar={user.avatar.url}
             />
           ))
         ) : (

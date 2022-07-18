@@ -1,5 +1,6 @@
 const Post = require("../models/Post");
 const User = require("../models/User");
+const cloudinary = require("cloudinary");
 
 //-------------------------------------------------------------------------------------------
 //===========================================================================================
@@ -9,15 +10,23 @@ const User = require("../models/User");
 
 exports.createPost = async (req, res) => {
   try {
+    const myCloud = await cloudinary.v2.uploader.upload(req.body.image, {
+      folder: "posts",
+    });
+
     const newPostData = {
       caption: req.body.caption,
       owner: req.user._id,
+      image: {
+        public_id: myCloud.public_id,
+        url: myCloud.secure_url,
+      },
     };
 
     const post = await Post.create(newPostData);
     const user = await User.findById(req.user._id);
 
-    user.posts.push(post._id);
+    user.posts.unshift(post._id);
     await user.save();
 
     res.status(201).json({
@@ -105,7 +114,7 @@ exports.deletePost = async (req, res) => {
       });
     }
 
-    // await cloudinary.v2.uploader.destroy(post.image.public_id);
+    await cloudinary.v2.uploader.destroy(post.image.public_id);
 
     await post.remove();
 
@@ -142,7 +151,7 @@ exports.getPostOfFollowing = async (req, res) => {
       owner: {
         $in: user.following,
       },
-    });
+    }).populate("owner likes comments.user");
 
     res.status(200).json({
       success: true,

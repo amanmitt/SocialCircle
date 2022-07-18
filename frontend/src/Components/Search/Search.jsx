@@ -42,7 +42,7 @@ const Search = () => {
                 key={user._id}
                 userId={user._id}
                 name={user.name}
-                //  avatar={user.avatar.url}
+                avatar={user.avatar.url}
               />
             ))}
         </div>

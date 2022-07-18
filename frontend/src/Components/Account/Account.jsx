@@ -65,10 +65,10 @@ const Account = () => {
               key={post._id}
               postId={post._id}
               caption={post.caption}
-              // postImage={post.image.url}
+              postImage={post.image.url}
               likes={post.likes}
               comments={post.comments}
-              // ownerImage={post.owner.avatar.url}
+              ownerImage={post.owner.avatar.url}
               ownerName={post.owner.name}
               ownerId={post.owner._id}
               isAccount={true}
@@ -83,7 +83,7 @@ const Account = () => {
       </div>
       <div className="accountright">
         <Avatar
-          // src={user.avatar.url}
+          src={user.avatar.url}
           sx={{ height: "8vmax", width: "8vmax" }}
         />
 
@@ -137,7 +137,7 @@ const Account = () => {
                   key={follower._id}
                   userId={follower._id}
                   name={follower.name}
-                  // avatar={follower.avatar.url}
+                  avatar={follower.avatar.url}
                 />
               ))
             ) : (
@@ -161,7 +161,7 @@ const Account = () => {
                   key={follow._id}
                   userId={follow._id}
                   name={follow.name}
-                  // avatar={follow.avatar.url}
+                  avatar={follow.avatar.url}
                 />
               ))
             ) : (
