@@ -7,9 +7,9 @@ import { Provider as AlertProvider, positions, transitions } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 
 const options = {
-  position: positions.BOTTOM_CENTER,
-  timeout: 5000,
-  transition: transitions.SCALE,
+  position: positions.TOP_CENTER,
+  timeout: 2000,
+  transition: transitions.FADE,
 };
 ReactDOM.render(
   <React.StrictMode>

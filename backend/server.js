@@ -2,6 +2,9 @@ const app = require("./app");
 const { connectDatabase } = require("./config/database");
 connectDatabase();
 
-app.listen(5000 || process.env.PORT, () => {
-  console.log(`Server is running at 5000`);
+const PORT = process.env.PORT.replace(/;/g, "");
+console.log(PORT);
+
+app.listen(PORT || 6000, () => {
+  console.log(`Server is running at ${PORT}`);
 });
