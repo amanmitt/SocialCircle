@@ -1,8 +1,8 @@
 .home {
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .homeleft {
@@ -29,8 +29,8 @@
   transition: all 0.5s;
 }
 .homeUser > img {
-  height: 3vmax;
-  width: 3vmax;
+  height: 3.5vmax;
+  width: 3.5vmax;
   margin: 1vmax;
   border-radius: 100%;
   border: 3px solid rgb(255, 201, 201);
