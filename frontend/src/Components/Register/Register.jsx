@@ -43,8 +43,8 @@ const Register = () => {
   return (
     <div className="register">
       <form className="registerForm" onSubmit={submitHandler}>
-        <Typography variant="h3" style={{ padding: "2vmax" }}>
-          Social Circle
+        <Typography variant="h4" style={{ padding: "2vmax" }}>
+          Social Circle - Register
         </Typography>
 
         <Avatar
@@ -83,7 +83,7 @@ const Register = () => {
         />
 
         <Link to="/">
-          <Typography>Already Signed Up? Login Now</Typography>
+          <Typography>Already Signed Up? Login</Typography>
         </Link>
 
         <Button disabled={loading} type="submit">

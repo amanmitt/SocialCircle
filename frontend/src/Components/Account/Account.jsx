@@ -3,12 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import {
-  deleteMyProfile,
-  getMyPosts,
-  loadUser,
-  logoutUser,
-} from "../../Actions/User";
+import { deleteMyProfile, getMyPosts, logoutUser } from "../../Actions/User";
 import Loader from "../Loader/Loader";
 import Post from "../Post/Post";
 import User from "../User/User";
@@ -31,6 +26,7 @@ const Account = () => {
   const [followingToggle, setFollowingToggle] = useState(false);
   const logoutHandler = () => {
     dispatch(logoutUser());
+
     alert.success("Logged out successfully");
   };
 
@@ -40,8 +36,6 @@ const Account = () => {
   };
 
   useEffect(() => {
-    // dispatch(loadUser());
-
     dispatch(getMyPosts());
   }, [dispatch]);
 
@@ -131,7 +125,7 @@ const Account = () => {
           Delete My Profile
         </Button>
 
-        <Dialog
+        {/* <Dialog
           open={followersToggle}
           onClose={() => setFollowersToggle(!followersToggle)}
         >
@@ -177,7 +171,7 @@ const Account = () => {
               </Typography>
             )}
           </div>
-        </Dialog>
+        </Dialog> */}
       </div>
     </div>
   );

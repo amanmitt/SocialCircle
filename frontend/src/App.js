@@ -11,8 +11,8 @@ import NewPost from "./Components/NewPost/NewPost";
 import Register from "./Components/Register/Register";
 import UpdateProfile from "./Components/UpdateProfile/UpdateProfile";
 import UpdatePassword from "./Components/UpdatePassword/UpdatePassword";
-import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
-import ResetPassword from "./Components/ResetPassword/ResetPassword";
+// import ForgotPassword from "./Components/ForgotPassword/ForgotPassword";
+// import ResetPassword from "./Components/ResetPassword/ResetPassword";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Search from "./Components/Search/Search";
 import NotFound from "./Components/NotFound/NotFound";
@@ -55,7 +55,7 @@ function App() {
           element={isAuthenticated ? <UpdatePassword /> : <Login />}
         />
 
-        <Route
+        {/* <Route
           path="/forgot/password"
           element={isAuthenticated ? <UpdatePassword /> : <ForgotPassword />}
         />
@@ -63,7 +63,7 @@ function App() {
         <Route
           path="/password/reset/:token"
           element={isAuthenticated ? <UpdatePassword /> : <ResetPassword />}
-        />
+        /> */}
 
         <Route
           path="/user/:id"
